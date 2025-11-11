@@ -1,6 +1,6 @@
 # Memweb (Vue 3 + Vite)
 
-Landing page inspired by Mem0, located under `memweb/` and deployed via GitHub Pages.
+Landing page for memverse, located under `memweb/` and deployed via GitHub Pages.
 
 ## Tech
 - Vue 3, TypeScript, Vite
@@ -24,5 +24,3 @@ yarn dev
 ## Notes
 - Override base path by setting env `BASE_PATH` during build if needed.
 - Update navigation and content in `src/layouts/DefaultLayout.vue` and `src/views/*`.
-
-Reference: https://mem0.ai/

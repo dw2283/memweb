@@ -2,12 +2,8 @@
   <section class="hero-gradient border-b">
     <div class="max-w-7xl mx-auto px-4 py-20 md:py-28 grid md:grid-cols-2 gap-10 items-center">
       <div>
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-50 text-brand-600 text-sm mb-4">
-          <span>Inspired by</span>
-          <a class="underline" href="https://mem0.ai/" target="_blank" rel="noreferrer">Mem0</a>
-        </div>
         <h1 class="text-4xl md:text-5xl font-bold leading-tight text-gray-900">
-          AI agents forget. <span class="text-brand-600">Your app remembers.</span>
+          AI agents forget. <span class="text-brand-600">memverse remembers.</span>
         </h1>
         <p class="mt-4 text-lg text-gray-600">
           A universal, self‑improving memory layer for your LLM application.
