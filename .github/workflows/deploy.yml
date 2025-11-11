@@ -31,11 +31,12 @@ jobs:
       - name: Build
         run: |
           if [[ "${{ github.event.repository.name }}" == *".github.io" ]]; then
-            echo "BASE_PATH=/" >> $GITHUB_ENV
+            BASE_PATH="/"
           else
-            echo "BASE_PATH=/${{ github.event.repository.name }}/" >> $GITHUB_ENV
+            BASE_PATH="/${{ github.event.repository.name }}/"
           fi
-          yarn build
+          echo "Building with BASE_PATH=$BASE_PATH"
+          BASE_PATH="$BASE_PATH" yarn build
         working-directory: ./
       - name: SPA fallback (copy index.html to 404.html)
         run: cp dist/index.html dist/404.html
