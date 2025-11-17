@@ -3,7 +3,7 @@
     <!-- Header -->
     <div class="text-center space-y-3">
       <h1 class="text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-        memverse Demo
+        MemVerse Demo
       </h1>
       <p class="text-gray-600 max-w-2xl mx-auto">
         Experience three types of memory: multimodal memory, short/long-term memory, and parametric memory. This is a complete memory system demonstration.
@@ -295,7 +295,7 @@
       <div class="text-center space-y-2">
         <h3 class="font-semibold text-gray-700">About the Memory System</h3>
         <p class="text-sm text-gray-600 max-w-3xl mx-auto">
-          memverse implements three types of memory systems: <strong>multimodal memory</strong> for understanding non-text content like images,
+          MemVerse implements three types of memory systems: <strong>multimodal memory</strong> for understanding non-text content like images,
           <strong>short/long-term memory</strong> for managing context information, and <strong>parametric memory</strong> for storing model knowledge.
           These memory types together form a complete AI memory system.
         </p>
@@ -425,7 +425,7 @@ async function ask() {
   } else if (lowerText.includes('pinia')) {
     answer = 'Pinia is the officially recommended state management library for Vue, serving as the successor to Vuex. Pinia is lightweight, modular, and TypeScript-friendly. It provides a simpler API, supports Composition API, and doesn\'t require module registration.'
   } else if (lowerText.includes('memory')) {
-    answer = 'Memory systems are core components in AI applications. memverse implements three types of memory: 1) Multimodal memory - processes non-text content like images and audio; 2) Short/long-term memory - manages context information, with short-term valid during sessions and long-term persisted; 3) Parametric memory - knowledge stored in model weights.'
+    answer = 'Memory systems are core components in AI applications. MemVerse implements three types of memory: 1) Multimodal memory - processes non-text content like images and audio; 2) Short/long-term memory - manages context information, with short-term valid during sessions and long-term persisted; 3) Parametric memory - knowledge stored in model weights.'
   } else if (lowerText.includes('ai') || lowerText.includes('artificial intelligence')) {
     answer = 'Artificial Intelligence (AI) is a branch of computer science that aims to create systems capable of performing tasks that typically require human intelligence. Modern AI includes machine learning, deep learning, natural language processing, and more. AI applications are widespread, including image recognition, voice assistants, autonomous vehicles, and recommendation systems.'
   } else {

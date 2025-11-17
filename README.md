@@ -1,6 +1,6 @@
 # Memweb (Vue 3 + Vite)
 
-Landing page for memverse, located under `memweb/` and deployed via GitHub Pages.
+Landing page for MemVerse, located under `memweb/` and deployed via GitHub Pages.
 
 ## Tech
 - Vue 3, TypeScript, Vite

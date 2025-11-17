@@ -3,7 +3,7 @@
     <div class="max-w-7xl mx-auto px-4 py-20 md:py-28 grid md:grid-cols-2 gap-10 items-center">
       <div>
         <h1 class="text-4xl md:text-5xl font-bold leading-tight text-gray-900">
-          AI agents forget. <span class="text-brand-600">memverse remembers.</span>
+          AI agents forget. <span class="text-brand-600">MemVerse remembers.</span>
         </h1>
         <p class="mt-4 text-lg text-gray-600">
           A universal, self‑improving memory layer for your LLM application.

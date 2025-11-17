@@ -4,7 +4,7 @@
       <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
         <router-link class="flex items-center gap-2 font-semibold text-gray-900" to="/">
           <img class="h-7 w-7" :src="base + 'favicon.svg'" alt="logo" />
-          <span>memverse</span>
+          <span>MemVerse</span>
         </router-link>
         <nav class="flex items-center gap-4">
           <router-link class="text-gray-600 hover:text-gray-900" to="/demo">Demo</router-link>
@@ -32,7 +32,7 @@
     </main>
     <footer class="border-t text-sm text-gray-500">
       <div class="max-w-7xl mx-auto px-4 py-6 flex items-center justify-between">
-        <span>© 2025 memverse.</span>
+        <span>© 2025 MemVerse.</span>
         <div class="flex gap-4">
           <router-link to="/privacy">Privacy</router-link>
           <router-link to="/status">Status</router-link>
