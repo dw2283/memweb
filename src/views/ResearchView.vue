@@ -3,11 +3,11 @@
     <!-- Hero Section -->
     <section class="hero-gradient border-b">
       <div class="max-w-7xl mx-auto px-4 py-16 md:py-24">
-        <div class="text-center space-y-6 max-w-4xl mx-auto">
+        <div class="text-center space-y-6 max-w-6xl mx-auto">
           <div class="inline-block px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-semibold mb-4">
             CVPR 2026 Submission #1238 | Anonymous
           </div>
-          <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight md:whitespace-nowrap">
+          <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
             MemVerse: Multimodal Memory for Lifelong Learning Agents
           </h1>
           <p class="text-xl text-gray-600 leading-relaxed">
