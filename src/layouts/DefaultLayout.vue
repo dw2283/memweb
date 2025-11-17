@@ -8,6 +8,7 @@
         </router-link>
         <nav class="flex items-center gap-4">
           <router-link class="text-gray-600 hover:text-gray-900" to="/demo">Demo</router-link>
+          <router-link class="text-gray-600 hover:text-gray-900" to="/use-cases">Use Cases</router-link>
           <router-link class="text-gray-600 hover:text-gray-900" to="/research">Research</router-link>
           <a 
             href="https://github.com/dw2283/memweb" 

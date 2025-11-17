@@ -7,6 +7,7 @@ const PrivacyView = () => import('@/views/PrivacyView.vue')
 const StatusView = () => import('@/views/StatusView.vue')
 const DemoView = () => import('@/views/DemoView.vue')
 const ResearchView = () => import('@/views/ResearchView.vue')
+const UseCasesView = () => import('@/views/UseCasesView.vue')
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -14,6 +15,7 @@ const router = createRouter({
     { path: '/', name: 'home', component: HomeView },
     { path: '/demo', name: 'demo', component: DemoView },
     { path: '/research', name: 'research', component: ResearchView },
+    { path: '/use-cases', name: 'use-cases', component: UseCasesView },
     { path: '/pricing', name: 'pricing', component: PricingView },
     { path: '/docs', name: 'docs', component: DocsView },
     { path: '/privacy', name: 'privacy', component: PrivacyView },

@@ -39,6 +39,60 @@
     </div>
   </section>
 
+  <!-- Use Cases Section -->
+  <section class="max-w-7xl mx-auto px-4 py-16 bg-white">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Use Cases</h2>
+      <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+        MemVerse powers AI applications across industries with persistent, multimodal memory.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8 max-w-6xl mx-auto">
+      <!-- Use Case 1: Intelligent Personal Assistant -->
+      <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl border-2 border-blue-200 p-8 hover:shadow-xl transition-shadow cursor-pointer" @click="goToUseCases">
+        <div class="w-14 h-14 rounded-lg bg-blue-600 flex items-center justify-center mb-5">
+          <el-icon class="text-white text-2xl"><i-ep-robot /></el-icon>
+        </div>
+        <h3 class="text-xl font-bold text-gray-900 mb-3">Intelligent Personal Assistant</h3>
+        <p class="text-base text-gray-700 leading-relaxed">
+          AI assistants that remember your preferences, habits, and personal information across all interactions. 
+          Learn and adapt to serve you better over time.
+        </p>
+      </div>
+
+      <!-- Use Case 2: Healthcare -->
+      <div class="bg-gradient-to-br from-red-50 to-red-100 rounded-xl border-2 border-red-200 p-8 hover:shadow-xl transition-shadow cursor-pointer" @click="goToUseCases">
+        <div class="w-14 h-14 rounded-lg bg-red-600 flex items-center justify-center mb-5">
+          <el-icon class="text-white text-2xl"><i-ep-medicine /></el-icon>
+        </div>
+        <h3 class="text-xl font-bold text-gray-900 mb-3">Healthcare</h3>
+        <p class="text-base text-gray-700 leading-relaxed">
+          Remember patient medical history, medication schedules, and treatment plans. 
+          Support multimodal inputs like medical images and voice notes for comprehensive care.
+        </p>
+      </div>
+
+      <!-- Use Case 3: GUI Agent -->
+      <div class="bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl border-2 border-purple-200 p-8 hover:shadow-xl transition-shadow cursor-pointer" @click="goToUseCases">
+        <div class="w-14 h-14 rounded-lg bg-purple-600 flex items-center justify-center mb-5">
+          <el-icon class="text-white text-2xl"><i-ep-monitor /></el-icon>
+        </div>
+        <h3 class="text-xl font-bold text-gray-900 mb-3">GUI Agent</h3>
+        <p class="text-base text-gray-700 leading-relaxed">
+          AI agents that interact with graphical interfaces, remember UI patterns, and automate tasks across different software platforms.
+        </p>
+      </div>
+    </div>
+
+    <div class="text-center">
+      <BaseButton type="primary" size="large" @click="goToUseCases">
+        <el-icon class="mr-2"><i-ep-arrow-right /></el-icon>
+        View All Use Cases
+      </BaseButton>
+    </div>
+  </section>
+
   <section class="max-w-7xl mx-auto px-4 py-16 bg-gray-50">
     <div class="text-center mb-12">
       <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Research & Analysis</h2>
@@ -124,6 +178,9 @@ function scrollToFeatures() {
 }
 function goToResearch() {
   router.push('/research')
+}
+function goToUseCases() {
+  router.push('/use-cases')
 }
 
 async function subscribe() {
