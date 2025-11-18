@@ -26,22 +26,12 @@
 
       <!-- Simple Integration Flow -->
       <div class="mt-8 sm:mt-12 md:mt-16 max-w-4xl mx-auto px-4">
-        <div class="bg-white rounded-xl sm:rounded-2xl border-2 border-gray-200 p-4 sm:p-6 md:p-8 shadow-xl">
-          <div class="flex items-center justify-center gap-2 sm:gap-3 md:gap-4 lg:gap-6 flex-wrap">
-            <div class="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 md:px-5 lg:px-6 py-2 sm:py-3 md:py-4 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg sm:rounded-xl shadow-lg">
-              <span class="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl font-bold text-white whitespace-nowrap">Plug MemVerse</span>
-            </div>
-            <div class="text-lg sm:text-xl md:text-2xl text-gray-400 flex-shrink-0">→</div>
-            <div class="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 md:px-5 lg:px-6 py-2 sm:py-3 md:py-4 bg-gradient-to-r from-purple-500 to-pink-600 rounded-lg sm:rounded-xl shadow-lg animate-pulse">
-              <el-icon class="text-white text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl flex-shrink-0"><i-ep-robot /></el-icon>
-              <span class="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl font-bold text-white whitespace-nowrap">Your AI Agent</span>
-            </div>
-            <div class="text-lg sm:text-xl md:text-2xl text-gray-400 flex-shrink-0">→</div>
-            <div class="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 md:px-5 lg:px-6 py-2 sm:py-3 md:py-4 bg-gradient-to-r from-green-500 to-emerald-600 rounded-lg sm:rounded-xl shadow-lg">
-              <el-icon class="text-white text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl flex-shrink-0"><i-ep-star /></el-icon>
-              <span class="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl font-bold text-white whitespace-nowrap">Unforgettable Agent</span>
-            </div>
-          </div>
+        <div class="bg-white rounded-xl sm:rounded-2xl border-2 border-gray-200 p-6 sm:p-8 md:p-10 shadow-xl">
+          <p class="text-center text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold text-gray-800 leading-relaxed">
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 font-bold">Plug MemVerse</span>
+            <span class="text-gray-700"> to your AI agent, </span>
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600 font-bold">achieve intelligence</span>
+          </p>
           <p class="text-center text-gray-500 mt-4 sm:mt-6 text-xs sm:text-sm px-2">
             One-line install. Works with any LLM. No complex setup.
           </p>
@@ -62,27 +52,38 @@
     </div>
   </section>
 
-  <!-- Problem Statement -->
-  <section class="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-20">
-    <div class="text-center max-w-3xl mx-auto space-y-4 sm:space-y-6">
-      <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 px-2">
-        AI systems lose context as user data evolves
-      </h2>
-      <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 mt-8 sm:mt-12">
-        <div class="p-4 sm:p-6 rounded-xl border-2 border-red-200 bg-red-50">
-          <div class="text-3xl sm:text-4xl mb-3 sm:mb-4">❌</div>
-          <h3 class="font-bold text-gray-900 mb-2 text-sm sm:text-base">Vector databases fail</h3>
-          <p class="text-gray-600 text-xs sm:text-sm">Can't track relationships between data</p>
+  <!-- Why MemVerse -->
+  <section class="bg-gradient-to-br from-gray-50 to-blue-50 py-12 sm:py-16 md:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-8 sm:mb-12 md:mb-16">
+        <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-3 sm:mb-4 px-2">
+          Why MemVerse for Your Use Case?
+        </h2>
+        <p class="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-4">
+          MemVerse's universal memory framework adapts to any application, providing consistent benefits across industries.
+        </p>
+      </div>
+      <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8 mb-8 sm:mb-12 md:mb-16">
+        <div class="bg-white rounded-xl sm:rounded-2xl border-2 border-blue-200 p-6 sm:p-8 shadow-lg hover:shadow-xl transition-shadow text-center">
+          <div class="w-12 h-12 sm:w-16 sm:h-16 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center mx-auto mb-4 sm:mb-6">
+            <el-icon class="text-white text-2xl sm:text-3xl"><i-ep-lightning /></el-icon>
+          </div>
+          <h3 class="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">Fast Integration</h3>
+          <p class="text-gray-600 text-sm sm:text-base md:text-lg leading-relaxed">One-line install. Works with any LLM framework. No complex setup required.</p>
         </div>
-        <div class="p-4 sm:p-6 rounded-xl border-2 border-orange-200 bg-orange-50">
-          <div class="text-3xl sm:text-4xl mb-3 sm:mb-4">⚠️</div>
-          <h3 class="font-bold text-gray-900 mb-2 text-sm sm:text-base">RAGs retrieve knowledge</h3>
-          <p class="text-gray-600 text-xs sm:text-sm">But can't remember context</p>
+        <div class="bg-white rounded-xl sm:rounded-2xl border-2 border-purple-200 p-6 sm:p-8 shadow-lg hover:shadow-xl transition-shadow text-center">
+          <div class="w-12 h-12 sm:w-16 sm:h-16 rounded-xl bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center mx-auto mb-4 sm:mb-6">
+            <el-icon class="text-white text-2xl sm:text-3xl"><i-ep-connection /></el-icon>
+          </div>
+          <h3 class="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">Multimodal Support</h3>
+          <p class="text-gray-600 text-sm sm:text-base md:text-lg leading-relaxed">Remember text, images, audio, and video. Process and retrieve across all modalities.</p>
         </div>
-        <div class="p-4 sm:p-6 rounded-xl border-2 border-green-200 bg-green-50 sm:col-span-2 md:col-span-1">
-          <div class="text-3xl sm:text-4xl mb-3 sm:mb-4">✅</div>
-          <h3 class="font-bold text-gray-900 mb-2 text-sm sm:text-base">Try MemVerse</h3>
-          <p class="text-gray-600 text-xs sm:text-sm">Personalization memory API</p>
+        <div class="bg-white rounded-xl sm:rounded-2xl border-2 border-green-200 p-6 sm:p-8 shadow-lg hover:shadow-xl transition-shadow text-center sm:col-span-2 md:col-span-1">
+          <div class="w-12 h-12 sm:w-16 sm:h-16 rounded-xl bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center mx-auto mb-4 sm:mb-6">
+            <el-icon class="text-white text-2xl sm:text-3xl"><i-ep-data-line /></el-icon>
+          </div>
+          <h3 class="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">Cost Efficient</h3>
+          <p class="text-gray-600 text-sm sm:text-base md:text-lg leading-relaxed">90% token savings. 91% lower latency. Scale without breaking the bank.</p>
         </div>
       </div>
     </div>
