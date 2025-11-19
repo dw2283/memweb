@@ -1,35 +1,44 @@
 <template>
   <div class="min-h-screen bg-white">
-    <!-- Research Header -->
+    <!-- Blog Header -->
     <section class="bg-white border-b">
       <div class="w-full px-4 sm:px-6 lg:px-8 xl:px-12 py-8 sm:py-12">
         <div class="max-w-4xl mx-auto">
+          <!-- Breadcrumb -->
+          <nav class="flex items-center gap-2 text-sm text-gray-500 mb-8">
+            <router-link to="/" class="hover:text-gray-900 transition-colors">Home</router-link>
+            <span>/</span>
+            <router-link to="/research" class="hover:text-gray-900 transition-colors">Research</router-link>
+            <span>/</span>
+            <span class="text-gray-900 font-medium">{{ currentBlog.title }}</span>
+          </nav>
+
           <!-- Category Badge -->
           <div class="mb-4">
             <span class="px-3 py-1.5 bg-blue-100 text-blue-800 rounded-lg text-xs font-semibold">
-              Research Paper
+              {{ currentBlog.category }}
             </span>
           </div>
 
           <!-- Title -->
           <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-            MemVerse: Multimodal Memory for Lifelong Learning Agents
+            {{ currentBlog.title }}
           </h1>
 
           <!-- Meta Info -->
           <div class="flex flex-wrap items-center gap-4 text-sm text-gray-600 mb-6">
             <div class="flex items-center gap-2">
               <span class="font-medium">Published at</span>
-              <span>2024</span>
+              <span>{{ currentBlog.date }}</span>
             </div>
             <span>•</span>
-            <span>15 min read</span>
+            <span>{{ currentBlog.readTime }}</span>
           </div>
 
           <!-- Tags -->
           <div class="flex flex-wrap gap-2 mb-8">
             <span 
-              v-for="tag in ['Memory Systems', 'Multimodal AI', 'Lifelong Learning']" 
+              v-for="tag in currentBlog.tags" 
               :key="tag"
               class="px-3 py-1 bg-gray-100 text-gray-700 text-sm font-medium rounded-md"
             >
@@ -38,9 +47,9 @@
           </div>
 
           <!-- Action Buttons -->
-          <div class="flex flex-wrap gap-3">
+          <div v-if="currentBlog.arxiv" class="flex flex-wrap gap-3">
             <a 
-              href="https://arxiv.org/abs/XXXX.XXXXX" 
+              :href="currentBlog.arxiv" 
               target="_blank"
               rel="noopener noreferrer"
               class="inline-flex items-center gap-2 px-5 py-2.5 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium"
@@ -48,25 +57,29 @@
               <el-icon><i-ep-document /></el-icon>
               View on arXiv
             </a>
+            <BaseButton size="default" @click="goBack" class="border border-gray-300">
+              <el-icon class="mr-2"><i-ep-arrow-left /></el-icon>
+              Back to Research
+            </BaseButton>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Research Content -->
+    <!-- Blog Content -->
     <article class="w-full px-4 sm:px-6 lg:px-8 xl:px-12 py-12 sm:py-16 md:py-20 bg-gray-50">
       <div class="max-w-4xl mx-auto">
         <!-- Featured Image -->
-        <div class="mb-8 rounded-xl overflow-hidden shadow-lg">
+        <div v-if="currentBlog.image" class="mb-8 rounded-xl overflow-hidden shadow-lg">
           <img 
-            src="https://dw2283.github.io/memweb/research/architecture.png" 
-            alt="MemVerse Architecture" 
+            :src="currentBlog.image" 
+            :alt="currentBlog.title"
             class="w-full h-auto"
             @error="handleImageError"
           />
         </div>
 
-        <!-- Research Content Sections -->
+        <!-- Blog Content Sections -->
         <div class="space-y-12">
           <!-- Project Overview -->
           <section class="bg-white rounded-2xl p-8 sm:p-10 shadow-sm">
@@ -124,7 +137,7 @@
             </div>
 
             <div class="bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl border border-blue-200 p-6">
-              <p class="text-gray-700 leading-relaxed text-center text-base sm:text-lg">
+              <p class="text-gray-700 leading-relaxed text-center">
                 <strong>MemVerse overcomes these by unifying complementary memory mechanisms, mirroring the "fast and slow thinking" of human cognition.</strong>
               </p>
             </div>
@@ -295,112 +308,6 @@
             </div>
           </section>
 
-          <!-- Ablation Insights -->
-          <section class="bg-white rounded-2xl p-8 sm:p-10 shadow-sm">
-            <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-6">📈 Ablation Insights</h2>
-
-            <div class="grid md:grid-cols-3 gap-6">
-              <div class="bg-white rounded-xl border p-6 shadow-sm">
-                <div class="w-12 h-12 rounded-lg bg-indigo-100 flex items-center justify-center mb-4">
-                  <el-icon class="text-indigo-600 text-2xl"><i-ep-picture /></el-icon>
-                </div>
-                <h3 class="text-xl font-bold text-gray-900 mb-3">Modality Impact</h3>
-                <p class="text-gray-700 leading-relaxed text-base sm:text-lg">
-                  Multimodal knowledge graphs improve reasoning accuracy by <strong class="text-indigo-600">7-12%</strong> compared to text-only memory.
-                </p>
-              </div>
-
-              <div class="bg-white rounded-xl border p-6 shadow-sm">
-                <div class="w-12 h-12 rounded-lg bg-pink-100 flex items-center justify-center mb-4">
-                  <el-icon class="text-pink-600 text-2xl"><i-ep-connection /></el-icon>
-                </div>
-                <h3 class="text-xl font-bold text-gray-900 mb-3">Memory Synergy</h3>
-                <p class="text-gray-700 leading-relaxed text-base sm:text-lg">
-                  Orchestrating STM, LTM, and parametric memory outperforms single-component systems across context lengths (4k-16k tokens).
-                </p>
-              </div>
-
-              <div class="bg-white rounded-xl border p-6 shadow-sm">
-                <div class="w-12 h-12 rounded-lg bg-teal-100 flex items-center justify-center mb-4">
-                  <el-icon class="text-teal-600 text-2xl"><i-ep-rank /></el-icon>
-                </div>
-                <h3 class="text-xl font-bold text-gray-900 mb-3">Scalability</h3>
-                <p class="text-gray-700 leading-relaxed text-base sm:text-lg">
-                  Works with models from <strong class="text-teal-600">1.5B to 72B parameters</strong>, with consistent gains regardless of base model size.
-                </p>
-              </div>
-            </div>
-          </section>
-
-          <!-- Demo Showcase -->
-          <section class="bg-white rounded-2xl p-8 sm:p-10 shadow-sm">
-            <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-6">🎨 Demo Showcase</h2>
-            <p class="text-lg sm:text-xl text-gray-600 mb-8">
-              Multimodal Memory in Action: MemVerse integrates diverse memory types to generate accurate, context-aware responses.
-            </p>
-
-            <!-- Multimodal Examples Image -->
-            <div class="bg-white rounded-xl border p-6 shadow-sm mb-8">
-              <img 
-                src="https://dw2283.github.io/memweb/research/multimodal_examples.png" 
-                alt="Multimodal Memory Examples" 
-                class="w-full h-auto rounded-lg"
-                @error="handleImageError"
-              />
-              <p class="text-sm text-gray-600 mt-4 text-center italic">
-                Figure 1: MemVerse's multimodal memory integration (from paper)
-              </p>
-            </div>
-
-            <!-- Comparison Table -->
-            <div class="bg-white rounded-xl border overflow-hidden shadow-sm">
-              <div class="overflow-x-auto">
-                <table class="w-full">
-                  <thead class="bg-gray-50">
-                    <tr>
-                      <th class="px-6 py-4 text-left text-sm font-semibold text-gray-900">Memory Type</th>
-                      <th class="px-6 py-4 text-left text-sm font-semibold text-gray-900">Example Input</th>
-                      <th class="px-6 py-4 text-left text-sm font-semibold text-green-700">With MemVerse (Accurate)</th>
-                      <th class="px-6 py-4 text-left text-sm font-semibold text-red-700">Without Memory (Hallucinated)</th>
-                    </tr>
-                  </thead>
-                  <tbody class="divide-y divide-gray-200">
-                    <tr>
-                      <td class="px-6 py-4 text-sm font-medium text-gray-900">Text + Image</td>
-                      <td class="px-6 py-4 text-sm text-gray-700">"Who owns the British Shorthair kitten with glasses?"</td>
-                      <td class="px-6 py-4 text-sm text-gray-700">
-                        "Mia is the proud owner of the fluffy gray British Shorthair. She adopted him from a pet shop on a rainy afternoon, and he wears round glasses while lounging on her desk."
-                      </td>
-                      <td class="px-6 py-4 text-sm text-gray-700">
-                        "The kitten you're referring to is likely Truffles, owned by an optician named Danielle Crull."
-                      </td>
-                    </tr>
-                    <tr class="bg-gray-50">
-                      <td class="px-6 py-4 text-sm font-medium text-gray-900">Audio + Text</td>
-                      <td class="px-6 py-4 text-sm text-gray-700">"What's a classic adventurous quote from Pirates of the Caribbean?"</td>
-                      <td class="px-6 py-4 text-sm text-gray-700">
-                        "One of Jack Sparrow's most famous lines: 'Not all treasure is silver and gold, mate.' It captures the film's spirit of valuing experiences over material gain."
-                      </td>
-                      <td class="px-6 py-4 text-sm text-gray-700">
-                        "A common quote is 'Yo ho, yo ho, a pirate's life for me'—though it's more of a theme song lyric."
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="px-6 py-4 text-sm font-medium text-gray-900">Video + Text</td>
-                      <td class="px-6 py-4 text-sm text-gray-700">"Describe the calm beach video in the album."</td>
-                      <td class="px-6 py-4 text-sm text-gray-700">
-                        "The video shows a calm beach with waves gently lapping at the shore, soft sand, and a clear blue sky—capturing a peaceful coastal moment."
-                      </td>
-                      <td class="px-6 py-4 text-sm text-gray-700">
-                        "The beach video features large waves crashing against rocks with stormy clouds overhead."
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </section>
-
           <!-- Core Contributions -->
           <section class="bg-white rounded-2xl p-8 sm:p-10 shadow-sm">
             <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-6">🚀 Core Contributions</h2>
@@ -412,7 +319,7 @@
                   </div>
                   <h3 class="text-xl font-bold text-gray-900">Unified Memory Interface</h3>
                 </div>
-                <p class="text-gray-700 leading-relaxed text-base sm:text-lg">
+                <p class="text-gray-700 leading-relaxed">
                   Plug-and-play design works with any LLM/VLM, no model retraining required.
                 </p>
               </div>
@@ -424,7 +331,7 @@
                   </div>
                   <h3 class="text-xl font-bold text-gray-900">Structured Multimodal Knowledge</h3>
                 </div>
-                <p class="text-gray-700 leading-relaxed text-base sm:text-lg">
+                <p class="text-gray-700 leading-relaxed">
                   Hierarchical knowledge graphs transform raw data into actionable, interpretable memory.
                 </p>
               </div>
@@ -436,7 +343,7 @@
                   </div>
                   <h3 class="text-xl font-bold text-gray-900">Efficient Dual-Path Recall</h3>
                 </div>
-                <p class="text-gray-700 leading-relaxed text-base sm:text-lg">
+                <p class="text-gray-700 leading-relaxed">
                   Periodic distillation balances fast parametric access and deep retrieval-based reasoning.
                 </p>
               </div>
@@ -448,7 +355,7 @@
                   </div>
                   <h3 class="text-xl font-bold text-gray-900">Lifelong Learning Support</h3>
                 </div>
-                <p class="text-gray-700 leading-relaxed text-base sm:text-lg">
+                <p class="text-gray-700 leading-relaxed">
                   Adaptive forgetting and bounded growth prevent redundancy and catastrophic forgetting.
                 </p>
               </div>
@@ -457,12 +364,85 @@
         </div>
       </div>
     </article>
+
+    <!-- Back Button -->
+    <section class="w-full px-4 sm:px-6 lg:px-8 xl:px-12 py-12 bg-white border-t">
+      <div class="max-w-4xl mx-auto">
+        <BaseButton size="large" @click="goBack" class="border border-gray-300">
+          <el-icon class="mr-2"><i-ep-arrow-left /></el-icon>
+          Back to Research
+        </BaseButton>
+      </div>
+    </section>
   </div>
 </template>
 
 <script setup lang="ts">
+import { ref, computed } from 'vue'
+import { useRouter, useRoute } from 'vue-router'
+import BaseButton from '@/components/base/BaseButton.vue'
+
+const router = useRouter()
+const route = useRoute()
+
+interface Blog {
+  title: string
+  summary: string
+  date: string
+  readTime: string
+  category: string
+  tags: string[]
+  image?: string
+  arxiv?: string
+}
+
+const blogs = [
+  {
+    title: 'MemVerse: Multimodal Memory for Lifelong Learning Agents',
+    summary: 'A model-agnostic, plug-and-play memory framework that equips AI agents with lifelong multimodal learning capabilities.',
+    date: '2024',
+    readTime: '15 min read',
+    category: 'Research Paper',
+    tags: ['Memory Systems', 'Multimodal AI', 'Lifelong Learning'],
+    image: 'https://dw2283.github.io/memweb/research/architecture.png',
+    arxiv: 'https://arxiv.org/abs/XXXX.XXXXX'
+  },
+  {
+    title: 'Hierarchical Memory Architecture for AI Agents',
+    summary: 'Exploring the design principles behind MemVerse\'s three-tier memory system.',
+    date: '2024',
+    readTime: '10 min read',
+    category: 'Technical Deep Dive',
+    tags: ['Architecture', 'Memory Systems', 'Design'],
+    image: undefined
+  },
+  {
+    title: 'Benchmark Results: MemVerse vs Traditional RAG',
+    summary: 'Comprehensive evaluation results showing MemVerse\'s performance across benchmarks.',
+    date: '2024',
+    readTime: '12 min read',
+    category: 'Benchmarks',
+    tags: ['Performance', 'Benchmarks', 'Evaluation'],
+    image: undefined
+  }
+]
+
+const blogId = computed(() => {
+  const id = route.params.id
+  return id ? parseInt(id as string) : 0
+})
+
+const currentBlog = computed(() => {
+  return blogs[blogId.value] || blogs[0]
+})
+
+function goBack() {
+  router.push('/research')
+}
+
 function handleImageError(event: Event) {
   const img = event.target as HTMLImageElement
   img.style.display = 'none'
 }
 </script>
+
