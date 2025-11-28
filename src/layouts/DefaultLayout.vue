@@ -1,46 +1,38 @@
 <template>
-  <div class="min-h-screen flex flex-col" :class="{ 'bg-black': isHomePage }">
-    <header 
-      class="border-b transition-colors duration-300"
-      :class="isHomePage ? 'bg-gray-900/80 backdrop-blur-sm border-gray-800' : 'bg-white/70 backdrop-blur supports-[backdrop-filter]:bg-white/50'"
-    >
-      <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+  <div class="min-h-screen flex flex-col bg-white">
+    <header class="border-b border-gray-200 bg-white/80 backdrop-blur supports-[backdrop-filter]:bg-white/80">
+      <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
         <router-link 
-          class="flex items-center gap-2 font-semibold transition-colors" 
-          :class="isHomePage ? 'text-white' : 'text-gray-900'"
+          class="flex items-center gap-2 font-medium text-gray-900 transition-colors hover:opacity-80" 
           to="/"
         >
           <img class="h-7 w-7" :src="base + 'favicon.svg'" alt="logo" />
           <span>MemVerse</span>
         </router-link>
-        <nav class="flex items-center gap-4">
+        <nav class="flex items-center gap-6">
           <router-link 
-            class="transition-colors"
-            :class="isHomePage ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'"
+            class="text-sm text-gray-600 hover:text-gray-900 transition-colors"
             to="/demo"
           >
             Demo
           </router-link>
           <router-link 
-            class="transition-colors"
-            :class="isHomePage ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'"
+            class="text-sm text-gray-600 hover:text-gray-900 transition-colors"
             to="/use-cases"
           >
             Use Cases
           </router-link>
           <router-link 
-            class="transition-colors"
-            :class="isHomePage ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'"
+            class="text-sm text-gray-600 hover:text-gray-900 transition-colors"
             to="/research"
           >
             Research
           </router-link>
           <a 
             href="https://github.com/dw2283/memweb" 
-            target="_blank" 
+            target="_blank"
             rel="noopener noreferrer"
-            class="flex items-center gap-1.5 transition-colors"
-            :class="isHomePage ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'"
+            class="flex items-center gap-1.5 text-sm text-gray-600 hover:text-gray-900 transition-colors"
             title="GitHub Repository"
           >
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -51,7 +43,7 @@
           <BaseButton 
             type="primary" 
             @click="goStart"
-            :class="isHomePage ? 'bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 border-0' : ''"
+            class="bg-gray-900 text-white hover:bg-gray-800 border-0"
           >
             Get Started
           </BaseButton>
@@ -61,21 +53,18 @@
     <main class="flex-1">
       <slot />
     </main>
-    <footer 
-      class="border-t text-sm transition-colors duration-300"
-      :class="isHomePage ? 'border-gray-800 text-gray-400 bg-gray-900' : 'text-gray-500'"
-    >
+    <footer class="border-t border-gray-200 text-sm text-gray-500 bg-white">
       <div class="max-w-7xl mx-auto px-4 py-6 flex items-center justify-between">
         <span>© 2025 MemVerse.</span>
-        <div class="flex gap-4">
+        <div class="flex gap-6">
           <router-link 
-            :class="isHomePage ? 'text-gray-400 hover:text-gray-300' : 'text-gray-500 hover:text-gray-700'"
+            class="hover:text-gray-900 transition-colors"
             to="/privacy"
           >
             Privacy
           </router-link>
           <router-link 
-            :class="isHomePage ? 'text-gray-400 hover:text-gray-300' : 'text-gray-500 hover:text-gray-700'"
+            class="hover:text-gray-900 transition-colors"
             to="/status"
           >
             Status
@@ -87,15 +76,11 @@
   </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
-import { useRoute, useRouter } from 'vue-router'
+import { useRouter } from 'vue-router'
 import BaseButton from '@/components/base/BaseButton.vue'
 
 const router = useRouter()
-const route = useRoute()
 const base = import.meta.env.BASE_URL
-
-const isHomePage = computed(() => route.path === '/')
 
 function goStart() {
   router.push('/')

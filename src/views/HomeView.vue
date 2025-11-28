@@ -1,217 +1,168 @@
 <template>
-  <!-- Hero Section with Dark Theme -->
-  <section class="relative overflow-hidden bg-gradient-to-br from-gray-900 via-black to-gray-900 border-b border-gray-800">
-    <!-- Animated Background Particles -->
-    <div class="absolute inset-0 overflow-hidden">
-      <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-pulse"></div>
-      <div class="absolute top-3/4 right-1/4 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl animate-pulse" style="animation-delay: 1s;"></div>
-      <div class="absolute bottom-1/4 left-1/2 w-96 h-96 bg-pink-500/20 rounded-full blur-3xl animate-pulse" style="animation-delay: 2s;"></div>
+  <!-- Hero Section - Apple Style -->
+  <section class="relative bg-gradient-to-b from-gray-50 to-white min-h-screen flex items-center justify-center overflow-hidden">
+    <!-- Subtle background decoration -->
+    <div class="absolute inset-0 opacity-5">
+      <div class="absolute top-20 left-10 w-72 h-72 bg-blue-500 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-20 right-10 w-96 h-96 bg-purple-500 rounded-full blur-3xl"></div>
     </div>
-
-    <!-- Grid Pattern Overlay -->
-    <div class="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
-
-    <div class="relative w-full px-4 sm:px-6 lg:px-8 xl:px-12 py-12 sm:py-16 md:py-20 lg:py-32">
-      <div class="max-w-7xl mx-auto">
-        <div class="text-center max-w-4xl mx-auto space-y-6 sm:space-y-8">
-          <div class="inline-block px-3 sm:px-4 py-1.5 sm:py-2 bg-blue-500/20 backdrop-blur-sm border border-blue-500/30 text-blue-400 rounded-full text-xs sm:text-sm font-semibold mb-2 sm:mb-4 animate-fade-in">
-            Personalize your AI app with long-term memory
-          </div>
-          <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight px-2 animate-fade-in-up">
-            <span class="text-white">Your AI isn't intelligent</span><br class="hidden sm:block">
-            <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 animate-gradient">until it remembers</span>
-        </h1>
-          <p class="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed px-4 animate-fade-in-up" style="animation-delay: 0.2s;">
-            Delight your users with blazing fast and scalable memory for your AI application. 
-            Interoperable between models and modalities.
-          </p>
-          <div class="flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-4 pt-2 sm:pt-4 px-4 animate-fade-in-up" style="animation-delay: 0.4s;">
-            <a 
-              href="https://github.com/dw2283/memweb" 
-              target="_blank"
-              rel="noopener noreferrer"
-              class="inline-flex items-center justify-center w-full sm:w-auto text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 border-0 shadow-lg shadow-blue-500/50 rounded-lg text-white font-semibold transition-all min-w-[180px]"
-            >
-              GitHub →
-            </a>
-            <button 
-              @click="goToResearch"
-              class="inline-flex items-center justify-center w-full sm:w-auto text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 bg-gray-800/50 backdrop-blur-sm border border-gray-700 text-white hover:bg-gray-700/50 rounded-lg font-semibold transition-all min-w-[180px]"
-            >
-              Explore Research
-            </button>
-          </div>
-        </div>
-
-        <!-- Simple Integration Flow -->
-        <div class="mt-8 sm:mt-12 md:mt-16 max-w-5xl mx-auto animate-fade-in-up" style="animation-delay: 0.6s;">
-          <div class="bg-gray-800/50 backdrop-blur-sm rounded-xl sm:rounded-2xl border border-gray-700 p-6 sm:p-8 md:p-10 shadow-2xl shadow-purple-500/20 hover:shadow-purple-500/30 transition-all">
-            <p class="text-center text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold leading-relaxed">
-              <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400 font-bold animate-gradient">Plug MemVerse</span>
-              <span class="text-gray-300"> to your AI agent, </span>
-              <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 font-bold animate-gradient">unlock memory-powered intelligence.</span>
+    <div class="relative w-full h-screen px-4 sm:px-6 lg:px-8 xl:px-12 flex items-center justify-center">
+      <div class="max-w-5xl mx-auto w-full space-y-6">
+        <div class="text-center space-y-4">
+          <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-gray-900 leading-tight tracking-tight">
+            Your AI isn't intelligent<br>
+            <span class="bg-gradient-to-r from-gray-700 to-gray-500 bg-clip-text text-transparent">until it remembers</span>
+          </h1>
+          <div class="text-sm sm:text-base max-w-4xl mx-auto leading-relaxed space-y-2">
+            <p class="text-sm sm:text-base md:text-lg font-medium bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent whitespace-nowrap">
+              Plug MemVerse to your AI agent, unlock memory-powered intelligence.
             </p>
-            <p class="text-center text-gray-400 mt-4 sm:mt-6 text-xs sm:text-sm px-2">
+            <p class="text-xs sm:text-sm text-gray-400">
               One-line install. Works with any LLM. No complex setup.
             </p>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- Video Demo Section -->
-  <section class="bg-gradient-to-br from-gray-900 via-black to-gray-900 py-12 sm:py-16 md:py-20 lg:py-24 border-b border-gray-800">
-    <div class="w-full px-4 sm:px-6 lg:px-8 xl:px-12">
-      <div class="max-w-6xl mx-auto">
-        <div class="text-center mb-8 sm:mb-12">
-          <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 px-2">
-            See MemVerse in Action
-          </h2>
-          <p class="text-base sm:text-lg md:text-xl text-gray-400 max-w-3xl mx-auto px-4">
-            Watch how MemVerse transforms AI agents with persistent, multimodal memory
-          </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-3">
+          <a 
+            href="https://github.com/dw2283/memweb" 
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center justify-center px-6 py-2.5 bg-gray-900 text-white rounded-full hover:bg-gray-800 hover:shadow-lg hover:scale-105 transition-all duration-200 text-xs font-medium min-w-[160px]"
+          >
+            GitHub
+          </a>
+          <button 
+            @click="goToResearch"
+            class="inline-flex items-center justify-center px-6 py-2.5 bg-white border-2 border-gray-200 text-gray-900 rounded-full hover:border-gray-300 hover:shadow-md hover:scale-105 transition-all duration-200 text-xs font-medium min-w-[160px]"
+          >
+            Explore Research
+          </button>
         </div>
 
         <!-- Video Container -->
-        <div class="relative w-full bg-gray-900/50 backdrop-blur-sm rounded-xl sm:rounded-2xl border border-gray-800 overflow-hidden shadow-2xl">
-          <div class="aspect-video w-full">
-            <!-- Placeholder for video - Replace with your actual video embed code -->
-            <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-blue-900/20 via-purple-900/20 to-pink-900/20">
-              <!-- YouTube/Vimeo embed example -->
-              <!-- Replace this div with your video embed code -->
-              <iframe
-                v-if="videoUrl"
-                :src="videoUrl"
-                class="w-full h-full"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-              ></iframe>
-              
-              <!-- Placeholder when no video URL -->
-              <div v-else class="text-center p-8">
-                <div class="w-20 h-20 mx-auto mb-4 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 flex items-center justify-center">
-                  <el-icon class="text-white text-4xl"><i-ep-video-play /></el-icon>
+        <div class="relative w-full bg-gradient-to-br from-gray-100 to-gray-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-200">
+          <div class="aspect-video w-full max-h-[400px]">
+            <iframe
+              v-if="videoUrl"
+              :src="videoUrl"
+              class="w-full h-full"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+            <div v-else class="w-full h-full flex items-center justify-center bg-gradient-to-br from-gray-50 to-gray-100">
+              <div class="text-center">
+                <div class="w-12 h-12 mx-auto mb-3 rounded-full bg-gradient-to-br from-blue-100 to-purple-100 flex items-center justify-center shadow-inner">
+                  <el-icon class="text-gray-600 text-2xl"><i-ep-video-play /></el-icon>
                 </div>
-                <p class="text-gray-400 text-lg mb-2">Video Demo Coming Soon</p>
-                <p class="text-gray-500 text-sm">Add your video URL to see the demo here</p>
+                <p class="text-gray-500 text-xs">Video Demo Coming Soon</p>
               </div>
             </div>
           </div>
-        </div>
-
-        <!-- Video Description -->
-        <div class="mt-6 sm:mt-8 text-center">
-          <p class="text-sm sm:text-base text-gray-500">
-            Experience MemVerse's memory capabilities in real-time
-          </p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Why MemVerse -->
-  <section class="bg-black py-12 sm:py-16 md:py-20 lg:py-24">
+  <section class="bg-white py-20 sm:py-24 md:py-32">
     <div class="w-full px-4 sm:px-6 lg:px-8 xl:px-12">
-      <div class="max-w-7xl mx-auto">
-        <div class="text-center mb-8 sm:mb-12 md:mb-16">
-          <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3 sm:mb-4 px-2">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-20">
+          <h2 class="text-2xl sm:text-3xl md:text-4xl font-semibold text-gray-900 mb-6">
             Why MemVerse?
           </h2>
-          <p class="text-base sm:text-lg md:text-xl text-gray-400 max-w-3xl mx-auto px-4 mb-4">
+          <p class="text-base text-gray-500 max-w-2xl mx-auto mb-8">
             Memory infrastructure that adapts to every use-case.
           </p>
-          <p class="text-lg sm:text-xl md:text-2xl font-semibold text-gray-300 px-4">
-            Works with every model.<br class="hidden sm:block">Faster. Better. Cheaper.
+          <p class="text-lg sm:text-xl text-gray-900 font-light">
+            Works with every model. Faster. Better. Cheaper.
           </p>
         </div>
 
         <!-- Features Grid -->
-        <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8 mb-12 md:mb-16">
+        <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6 mb-20">
           <!-- Fast Integration -->
-          <div class="bg-gray-900/50 backdrop-blur-sm rounded-xl sm:rounded-2xl border border-gray-800 p-6 sm:p-8 shadow-lg hover:shadow-xl hover:border-blue-500/50 transition-all group">
-            <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-blue-500/20 to-blue-600/20 border border-blue-500/30 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-              <el-icon class="text-blue-400 text-2xl"><i-ep-lightning /></el-icon>
+          <div class="text-center p-8 rounded-2xl border border-gray-100 hover:border-gray-200 hover:shadow-md transition-all duration-200">
+            <div class="w-14 h-14 mx-auto mb-5 rounded-full bg-gradient-to-br from-blue-50 to-blue-100 flex items-center justify-center">
+              <el-icon class="text-blue-600 text-2xl"><i-ep-lightning /></el-icon>
             </div>
-            <h3 class="text-lg sm:text-xl font-bold text-white mb-3">Fast Integration</h3>
-            <p class="text-gray-400 text-sm sm:text-base leading-relaxed">
+            <h3 class="text-lg font-semibold text-gray-900 mb-3">Fast Integration</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">
               One-line install. Works with any LLM framework. No complex setup required.
             </p>
           </div>
 
           <!-- Multimodal Support -->
-          <div class="bg-gray-900/50 backdrop-blur-sm rounded-xl sm:rounded-2xl border border-gray-800 p-6 sm:p-8 shadow-lg hover:shadow-xl hover:border-purple-500/50 transition-all group">
-            <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-purple-500/20 to-purple-600/20 border border-purple-500/30 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-              <el-icon class="text-purple-400 text-2xl"><i-ep-connection /></el-icon>
+          <div class="text-center p-8 rounded-2xl border border-gray-100 hover:border-gray-200 hover:shadow-md transition-all duration-200">
+            <div class="w-14 h-14 mx-auto mb-5 rounded-full bg-gradient-to-br from-purple-50 to-purple-100 flex items-center justify-center">
+              <el-icon class="text-purple-600 text-2xl"><i-ep-connection /></el-icon>
             </div>
-            <h3 class="text-lg sm:text-xl font-bold text-white mb-3">Multimodal Support</h3>
-            <p class="text-gray-400 text-sm sm:text-base leading-relaxed">
+            <h3 class="text-lg font-semibold text-gray-900 mb-3">Multimodal Support</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">
               Remember text, images, audio, and video. Process and retrieve across all modalities.
             </p>
           </div>
 
           <!-- Cost Efficient -->
-          <div class="bg-gray-900/50 backdrop-blur-sm rounded-xl sm:rounded-2xl border border-gray-800 p-6 sm:p-8 shadow-lg hover:shadow-xl hover:border-green-500/50 transition-all sm:col-span-2 md:col-span-1 group">
-            <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-green-500/20 to-green-600/20 border border-green-500/30 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-              <el-icon class="text-green-400 text-2xl"><i-ep-data-line /></el-icon>
+          <div class="text-center sm:col-span-2 md:col-span-1 p-8 rounded-2xl border border-gray-100 hover:border-gray-200 hover:shadow-md transition-all duration-200">
+            <div class="w-14 h-14 mx-auto mb-5 rounded-full bg-gradient-to-br from-green-50 to-green-100 flex items-center justify-center">
+              <el-icon class="text-green-600 text-2xl"><i-ep-data-line /></el-icon>
             </div>
-            <h3 class="text-lg sm:text-xl font-bold text-white mb-3">Cost Efficient</h3>
-            <p class="text-gray-400 text-sm sm:text-base leading-relaxed">
-              <span class="font-semibold text-blue-400">90% token savings.</span> 91% lower latency. Scale without breaking the bank.
+            <h3 class="text-lg font-semibold text-gray-900 mb-3">Cost Efficient</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">
+              <span class="font-medium text-gray-900">90% token savings.</span> 91% lower latency. Scale without breaking the bank.
             </p>
           </div>
         </div>
 
         <!-- Performance Metrics -->
-        <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
-          <div class="bg-gradient-to-br from-blue-900/50 to-blue-800/30 rounded-xl sm:rounded-2xl border border-blue-500/30 p-6 sm:p-8 shadow-lg hover:shadow-blue-500/20 transition-all group">
-            <div class="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-blue-400 to-blue-300 bg-clip-text text-transparent mb-3 sm:mb-4 group-hover:scale-110 transition-transform inline-block">10×</div>
-            <h3 class="text-lg sm:text-xl font-bold text-white mb-2">Faster Recall</h3>
-            <p class="text-gray-400 text-sm sm:text-base">MemVerse retrieves memories in milliseconds — up to 10× faster than traditional RAG systems.</p>
+        <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
+          <div class="text-center p-8 rounded-2xl border border-gray-100 hover:border-gray-200 hover:shadow-md transition-all duration-200">
+            <div class="text-5xl sm:text-6xl font-light bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent mb-4">10×</div>
+            <h3 class="text-base font-semibold text-gray-900 mb-3">Faster Recall</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">MemVerse retrieves memories in milliseconds — up to 10× faster than traditional RAG systems.</p>
           </div>
 
-          <div class="bg-gradient-to-br from-purple-900/50 to-purple-800/30 rounded-xl sm:rounded-2xl border border-purple-500/30 p-6 sm:p-8 shadow-lg hover:shadow-purple-500/20 transition-all group">
-            <div class="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-purple-400 to-purple-300 bg-clip-text text-transparent mb-3 sm:mb-4 group-hover:scale-110 transition-transform inline-block">89%</div>
-            <h3 class="text-lg sm:text-xl font-bold text-white mb-2">Token Savings</h3>
-            <p class="text-gray-400 text-sm sm:text-base">Reduce token costs by 89% while maintaining accuracy with efficient memory compression.</p>
+          <div class="text-center p-8 rounded-2xl border border-gray-100 hover:border-gray-200 hover:shadow-md transition-all duration-200">
+            <div class="text-5xl sm:text-6xl font-light bg-gradient-to-r from-purple-600 to-purple-400 bg-clip-text text-transparent mb-4">89%</div>
+            <h3 class="text-base font-semibold text-gray-900 mb-3">Token Savings</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">Reduce token costs by 89% while maintaining accuracy with efficient memory compression.</p>
           </div>
 
-          <div class="bg-gradient-to-br from-green-900/50 to-green-800/30 rounded-xl sm:rounded-2xl border border-green-500/30 p-6 sm:p-8 shadow-lg hover:shadow-green-500/20 transition-all sm:col-span-2 md:col-span-1 group">
-            <div class="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-green-400 to-green-300 bg-clip-text text-transparent mb-3 sm:mb-4 group-hover:scale-110 transition-transform inline-block">70%</div>
-            <h3 class="text-lg sm:text-xl font-bold text-white mb-2">Lower Cost</h3>
-            <p class="text-gray-400 text-sm sm:text-base">Enterprise-grade memory at 70% lower cost than bloated infrastructure solutions.</p>
+          <div class="text-center sm:col-span-2 md:col-span-1 p-8 rounded-2xl border border-gray-100 hover:border-gray-200 hover:shadow-md transition-all duration-200">
+            <div class="text-5xl sm:text-6xl font-light bg-gradient-to-r from-green-600 to-green-400 bg-clip-text text-transparent mb-4">70%</div>
+            <h3 class="text-base font-semibold text-gray-900 mb-3">Lower Cost</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">Enterprise-grade memory at 70% lower cost than bloated infrastructure solutions.</p>
           </div>
-        </div>
         </div>
       </div>
+    </div>
   </section>
 
   <!-- CTA Section -->
-  <section class="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white py-12 sm:py-16 md:py-20 lg:py-24 relative overflow-hidden">
-    <!-- Animated Gradient Overlay -->
-    <div class="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 animate-gradient-bg"></div>
-    
-    <div class="relative w-full px-4 sm:px-6 lg:px-8 xl:px-12">
-      <div class="max-w-6xl mx-auto text-center">
-        <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 px-2">
+  <section class="bg-gradient-to-b from-white to-gray-50 py-16 sm:py-20 md:py-24">
+    <div class="w-full px-4 sm:px-6 lg:px-8 xl:px-12">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-semibold text-gray-900 mb-6">
           Intelligence without memory is just randomness.
         </h2>
-        <p class="text-base sm:text-lg md:text-xl mb-6 sm:mb-8 opacity-90">
+        <p class="text-base text-gray-500 mb-10">
           Start building with MemVerse today.
         </p>
-        <div class="flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-4">
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
           <a 
             href="https://github.com/dw2283/memweb" 
             target="_blank"
             rel="noopener noreferrer"
-            class="inline-flex items-center justify-center w-full sm:w-auto text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 bg-white text-blue-600 hover:bg-gray-100 rounded-lg font-semibold shadow-xl transition-all min-w-[180px]"
+            class="inline-flex items-center justify-center px-8 py-3 bg-gray-900 text-white rounded-full hover:bg-gray-800 hover:shadow-lg hover:scale-105 transition-all duration-200 text-sm font-medium min-w-[180px]"
           >
-            GitHub →
+            GitHub
           </a>
           <button 
             @click="goToResearch"
-            class="inline-flex items-center justify-center w-full sm:w-auto bg-transparent border-2 border-white text-white hover:bg-white/10 text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 backdrop-blur-sm rounded-lg font-semibold transition-all min-w-[180px]"
+            class="inline-flex items-center justify-center px-8 py-3 bg-white border-2 border-gray-200 text-gray-900 rounded-full hover:border-gray-300 hover:shadow-md hover:scale-105 transition-all duration-200 text-sm font-medium min-w-[180px]"
           >
             Explore Research
           </button>
@@ -221,29 +172,29 @@
   </section>
 
   <!-- FAQ Section -->
-  <section class="bg-gray-900 py-12 sm:py-16 md:py-20 lg:py-24">
+  <section class="bg-white py-16 sm:py-20 md:py-24">
     <div class="w-full px-4 sm:px-6 lg:px-8 xl:px-12">
-      <div class="max-w-5xl mx-auto">
-        <div class="text-center mb-8 sm:mb-12">
-          <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-3 sm:mb-4 px-2">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-2xl sm:text-3xl font-semibold text-gray-900 mb-4">
             Frequently Asked Questions
           </h2>
-          <p class="text-sm sm:text-base text-gray-400 max-w-2xl mx-auto px-4">
+          <p class="text-base text-gray-500">
             Everything you need to know about MemVerse
           </p>
         </div>
 
-        <div class="space-y-4">
+        <div class="space-y-1">
           <div 
             v-for="(faq, index) in faqs" 
             :key="index"
-            class="bg-gray-800/50 backdrop-blur-sm rounded-xl border border-gray-700 overflow-hidden shadow-sm hover:shadow-lg hover:border-blue-500/50 transition-all"
+            class="border-b border-gray-200 hover:bg-gray-50 transition-colors duration-200 rounded-lg"
           >
             <button
               @click="toggleFaq(index)"
-              class="w-full px-6 py-4 sm:px-8 sm:py-5 text-left flex items-center justify-between focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-inset"
+              class="w-full px-4 py-6 text-left flex items-center justify-between focus:outline-none rounded-lg"
             >
-              <h3 class="text-sm sm:text-base font-semibold text-white pr-4">
+              <h3 class="text-sm font-medium text-gray-900 pr-8">
                 {{ faq.question }}
               </h3>
               <el-icon 
@@ -255,35 +206,34 @@
             </button>
             <div 
               v-show="faq.open"
-              class="px-6 py-4 sm:px-8 sm:py-5 pt-0 border-t border-gray-700"
+              class="px-4 pb-6 text-gray-600 leading-relaxed"
             >
-              <p class="text-xs sm:text-sm text-gray-400 leading-relaxed">
+              <p class="text-sm">
                 {{ faq.answer }}
               </p>
             </div>
           </div>
-    </div>
+        </div>
     </div>
     </div>
   </section>
 
   <!-- Newsletter Section -->
-  <section class="w-full px-4 sm:px-6 lg:px-8 xl:px-12 py-12 sm:py-16 lg:py-20 bg-black">
-    <div class="max-w-4xl mx-auto">
-      <div class="bg-gray-900/50 backdrop-blur-sm rounded-xl sm:rounded-2xl border border-gray-800 p-6 sm:p-8 shadow-xl">
-        <h3 class="text-xl sm:text-2xl font-bold text-white mb-4 text-center">Stay Updated</h3>
+  <section class="bg-gray-50 py-16 sm:py-20">
+    <div class="w-full px-4 sm:px-6 lg:px-8 xl:px-12">
+      <div class="max-w-2xl mx-auto text-center">
+        <h3 class="text-xl font-semibold text-gray-900 mb-6">Stay Updated</h3>
         <el-form :model="form" class="grid sm:grid-cols-[1fr_auto] gap-3">
           <el-input 
             v-model="form.email" 
             placeholder="Enter your email for updates" 
             size="large"
-            class="dark-input"
           />
-          <BaseButton type="primary" :loading="loading" @click="subscribe" size="large" class="w-full sm:w-auto bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 border-0">
+          <BaseButton type="primary" :loading="loading" @click="subscribe" size="large" class="w-full sm:w-auto">
             Notify Me
           </BaseButton>
     </el-form>
-        <p class="text-xs text-gray-500 mt-3 text-center">
+        <p class="text-xs text-gray-500 mt-4">
       By subscribing you agree to our privacy policy.
     </p>
       </div>
@@ -396,81 +346,3 @@ async function subscribe() {
   }
 }
 </script>
-
-<style scoped>
-/* Animations */
-@keyframes fade-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes fade-in-up {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes gradient {
-  0%, 100% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-}
-
-@keyframes gradient-bg {
-  0%, 100% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-}
-
-.animate-fade-in {
-  animation: fade-in 0.6s ease-out;
-}
-
-.animate-fade-in-up {
-  animation: fade-in-up 0.8s ease-out;
-}
-
-.animate-gradient {
-  background-size: 200% 200%;
-  animation: gradient 3s ease infinite;
-}
-
-.animate-gradient-bg {
-  background-size: 200% 200%;
-  animation: gradient-bg 5s ease infinite;
-}
-
-/* Dark theme input styling */
-:deep(.dark-input .el-input__wrapper) {
-  background-color: rgba(31, 41, 55, 0.5);
-  border-color: rgba(75, 85, 99, 0.5);
-  box-shadow: none;
-}
-
-:deep(.dark-input .el-input__wrapper:hover) {
-  border-color: rgba(96, 165, 250, 0.5);
-}
-
-:deep(.dark-input .el-input__inner) {
-  color: white;
-}
-
-:deep(.dark-input .el-input__inner::placeholder) {
-  color: rgba(156, 163, 175, 0.7);
-}
-</style>
