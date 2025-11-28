@@ -31,8 +31,3 @@ yarn build
 
 The built files will be in the `dist/` directory.
 
-### Deploy to GitHub Pages
-
-1. Push your code to the repository
-2. The workflow at `.github/workflows/deploy.yml` will automatically build and deploy
-3. Enable Pages: Settings → Pages → Source: GitHub Actions
