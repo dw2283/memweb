@@ -17,7 +17,7 @@
             Research
           </router-link>
           <a 
-            href="https://github.com/dw2283/memweb" 
+            href="https://github.com/Wings-Of-Disaster/MemVerse" 
             target="_blank"
             rel="noopener noreferrer"
             class="flex items-center gap-1.5 text-sm text-gray-600 hover:text-gray-900 transition-colors"
@@ -28,13 +28,14 @@
             </svg>
             <span class="hidden md:inline">GitHub</span>
           </a>
-          <BaseButton 
-            type="primary" 
-            @click="goStart"
-            class="bg-gray-900 text-white hover:bg-gray-800 border-0"
+          <a 
+            href="https://github.com/Wings-Of-Disaster/MemVerse" 
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center justify-center px-4 py-2 bg-gray-900 text-white rounded-md hover:bg-gray-800 transition-colors text-sm font-medium"
           >
             Get Started
-          </BaseButton>
+          </a>
         </nav>
       </div>
     </header>
@@ -64,15 +65,7 @@
   </template>
 
 <script setup lang="ts">
-import { useRouter } from 'vue-router'
-import BaseButton from '@/components/base/BaseButton.vue'
-
-const router = useRouter()
 const base = import.meta.env.BASE_URL
-
-function goStart() {
-  router.push('/')
-}
 </script>
 
 
