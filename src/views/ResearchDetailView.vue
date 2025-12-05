@@ -130,7 +130,7 @@
             <div class="mb-8">
               <h3 class="text-xl sm:text-2xl font-semibold text-gray-900 mb-4">1. Hierarchical Retrieval-Based Memory</h3>
               <p class="text-gray-700 leading-relaxed text-sm sm:text-base mb-4">
-                This component handles long-term knowledge storage with three specialized memory types, all organized as multimodal knowledge graphs (MMKGs):
+                This component handles long-term knowledge storage with three specialized memory types, all organized as multimodal knowledge graphs:
               </p>
               
               <!-- Memory Types Table -->
