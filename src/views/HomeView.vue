@@ -60,9 +60,13 @@
               v-if="demoVideoPath"
               :src="demoVideoPath"
               controls
+              autoplay
+              muted
+              playsinline
+              loop
               class="w-full h-full object-cover transition-opacity duration-500"
               :class="{ 'opacity-0 absolute': !videoLoaded, 'opacity-100': videoLoaded }"
-              preload="metadata"
+              preload="auto"
               @error="handleVideoError"
               @loadedmetadata="handleVideoLoaded"
               @loadstart="handleVideoLoadStart"
