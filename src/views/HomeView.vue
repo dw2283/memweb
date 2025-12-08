@@ -41,14 +41,16 @@
 
         <!-- Video Container -->
         <div class="relative w-full bg-gradient-to-br from-gray-100 to-gray-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-200">
-          <div class="aspect-video w-full max-h-[400px]">
+          <div class="w-full aspect-video max-h-[600px]">
             <!-- 播放 public 目录下的视频 -->
             <video
               v-if="demoVideoPath"
               :src="demoVideoPath"
               controls
-              class="w-full h-full object-contain bg-black"
+              class="w-full h-full object-cover"
               preload="metadata"
+              @error="handleVideoError"
+              @loadedmetadata="handleVideoLoaded"
             >
               您的浏览器不支持视频播放。
             </video>
@@ -341,13 +343,14 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
+import { ElMessage } from 'element-plus'
 
 const router = useRouter()
 
 // Demo 视频路径 - 视频文件应放在 public 目录下
 // 例如：如果视频文件是 public/demo.mp4，则路径为 '/demo.mp4'
 // 或者：public/videos/demo.mp4，则路径为 '/videos/demo.mp4'
-const demoVideoPath = ref<string>('/14631384_3840_2160_60fps.mp4')
+const demoVideoPath = ref<string>('/demo.mp4')
 
 // FAQ data
 const faqs = ref([
@@ -426,5 +429,26 @@ function viewBlogDetail(index: number) {
 function handleImageError(event: Event) {
   const img = event.target as HTMLImageElement
   img.style.display = 'none'
+}
+
+function handleVideoError(event: Event) {
+  const video = event.target as HTMLVideoElement
+  console.error('视频加载失败:', {
+    error: video.error,
+    src: video.src,
+    networkState: video.networkState,
+    readyState: video.readyState
+  })
+  ElMessage.error('视频加载失败，请检查文件路径或格式')
+}
+
+function handleVideoLoaded(event: Event) {
+  const video = event.target as HTMLVideoElement
+  console.log('视频加载成功:', {
+    duration: video.duration,
+    videoWidth: video.videoWidth,
+    videoHeight: video.videoHeight,
+    src: video.src
+  })
 }
 </script>
